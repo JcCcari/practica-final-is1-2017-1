@@ -21,7 +21,7 @@ public class Matricula implements BaseEntity<Long> {
 	private String semestre;
 
 	Matricula(){}
-    Matricula(Curso curso, Alumno alumno, String semestre){
+    public Matricula(Alumno alumno, Curso curso, String semestre){
 	    this.curso = curso;
 	    this.alumno = alumno;
 	    this.semestre = semestre;

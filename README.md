@@ -44,14 +44,14 @@ La matrícula representa la relación entre un alumno y un curso, durante un sem
 la nota con la que el alumno aprueba o desaprueba dicho curso.
 
 ## Funcionalidades a Implementar ##
-* Hacer el mapeo correspondiente a Entidades JPA.
-* Mapear las relaciones OneToMany, OneToOne, ManyToOne y ManyToMany según corresponda.
-* Validar que las tablas y sus relaciones se crearon correctamente en la base de datos.
+* Hacer el mapeo correspondiente a Entidades JPA. [OK]
+* Mapear las relaciones OneToMany, OneToOne, ManyToOne y ManyToMany según corresponda. [OK]
+* Validar que las tablas y sus relaciones se crearon correctamente en la base de datos. [OK]
 * Permitir matricular un alumno en un determinado curso, siempre que cumpla con los prerequisitos.
 * Permitir subir la nota de un alumno (require estar matriculado previamente en dicho curso).
-* Listar todos los cursos.
-* Buscar un determinado curso dado su código.
-* Buscar un determinado curso dado una parte de su nombre.
-* Buscar un alumno por su apellido paterno.
-* Listar los alumnos matriculados en un deteminado curso y semestre con sus respectivas notas.
+* Listar todos los cursos. [OK]
+* Buscar un determinado curso dado su código.[OK]
+* Buscar un determinado curso dado una parte de su nombre.[OK]
+* Buscar un alumno por su apellido paterno. [OK]
+* Listar los alumnos matriculados en un deteminado curso y semestre con sus respectivas notas. [OK]
 * Listar la jerarquía de cursos en forma de árbol de acuerdo a los prerequisitos.

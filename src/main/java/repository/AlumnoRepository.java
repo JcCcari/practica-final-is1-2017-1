@@ -12,4 +12,11 @@ import java.util.Collection;
 public interface AlumnoRepository extends CrudRepository<Alumno, Long> {
     @Query("select a from Alumno a")
     Collection<Alumno> findAll();
+
+    @Query("select a from Alumno a where a.dni = ?1")
+    Alumno findByDni();
+
+    @Query("select a from Alumno a where a.apellidoPaterno = ?1")
+    Collection<Alumno> findByApellidoPaterno(String apellido);
+
 }
