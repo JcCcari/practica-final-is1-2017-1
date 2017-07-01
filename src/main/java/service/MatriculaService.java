@@ -24,14 +24,17 @@ public class MatriculaService {
 
     Boolean matricular(Alumno alumno, Curso curso, String semestre){
         if (matriculaRepository.findCreditosByAlumno(alumno.getId() + curso.getCreditos()) > 20)
-            return false; // no se puede matricular
+            return false; // no se puede matricular, exedió el numero de creditos
         Matricula matricula = new Matricula(alumno, curso, semestre);
         return true;
     }
 
-    Boolean subirNotaCurso(Curso curso, Alumno alumno ,Integer nota){
+    Boolean subirNotaCurso(Curso curso, Alumno alumno ,Double nota){
+        Matricula matricula = matriculaRepository.estaMatriculadoEnCurso(curso.getNombre(), alumno.getDni());
+        if(matricula == null)
+            return false; // no esta matriculado
 
-
+        matricula.setNota(nota);
         return true;
     }
 
