@@ -19,17 +19,28 @@ public class MatriculaController {
     @Autowired
     MatriculaService matriculaService;
     @Autowired
-    CursoRepository cursoRepository;
+    CursoService cursoService;
     @Autowired
     AlumnoService alumnoService;
 
     @RequestMapping("/matricular")
     @ResponseBody
     boolean matricular(String cursoNombre, String dniAlumno, String semestre){
-        Curso curso = cursoRepository.findByNombreContaining(cursoNombre);
+        Curso curso = cursoService.findByNombre(cursoNombre);
         Alumno alumno = alumnoService.findByDni(dniAlumno);
 
         if(matriculaService.matricular(alumno,curso,semestre))
+            return true;
+        return false;
+    }
+
+    @RequestMapping("/subirNota")
+    @ResponseBody
+    boolean subirNota(String cursoNombre, String dniAlumno, Double nota){
+        Curso curso = cursoService.findByNombre(cursoNombre);
+        Alumno alumno = alumnoService.findByDni(dniAlumno);
+
+        if(matriculaService.subirNotaCurso(curso,alumno,nota))
             return true;
         return false;
     }

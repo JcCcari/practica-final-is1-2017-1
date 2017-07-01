@@ -18,4 +18,7 @@ public class CursoService {
     @Autowired
     MatriculaRepository matriculaRepository;
 
+    public Curso findByNombre(String nombreCurso){
+        return cursoRepository.findByNombre(nombreCurso);
+    }
 }

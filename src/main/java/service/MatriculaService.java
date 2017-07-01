@@ -29,7 +29,7 @@ public class MatriculaService {
         return true;
     }
 
-    Boolean subirNotaCurso(Curso curso, Alumno alumno ,Double nota){
+    public Boolean subirNotaCurso(Curso curso, Alumno alumno ,Double nota){
         Matricula matricula = matriculaRepository.estaMatriculadoEnCurso(curso.getNombre(), alumno.getDni());
         if(matricula == null)
             return false; // no esta matriculado
