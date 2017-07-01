@@ -29,7 +29,8 @@ public class MatriculaController {
         Curso curso = cursoRepository.findByNombreContaining(cursoNombre);
         Alumno alumno = alumnoService.findByDni(dniAlumno);
 
-        if(matriculaService.matricular(alumno,curso,semestre));
+        if(matriculaService.matricular(alumno,curso,semestre))
             return true;
+        return false;
     }
 }
