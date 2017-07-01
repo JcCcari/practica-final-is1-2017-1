@@ -18,12 +18,6 @@ public class MatriculaService {
     @Autowired
     MatriculaRepository matriculaRepository;
 
-    @Autowired
-    private Environment environment;
-
-    @Autowired
-    private ConversionService conversionService;
-
     Boolean matricular(Alumno alumno, Curso curso, String semestre){
 
         Matricula matricula = new Matricula(alumno, curso, semestre);

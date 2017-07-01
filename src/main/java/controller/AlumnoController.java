@@ -19,6 +19,7 @@ public class AlumnoController {
     AlumnoService alumnoService;
 
     @RequestMapping(value="/findByApellidoPaterno")
+    @ResponseBody
     Collection<Alumno> findByApellidoPaterno(String apellidoPaterno){
         return alumnoService.findByApellidoPaterno(apellidoPaterno);
     }
