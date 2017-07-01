@@ -13,7 +13,7 @@ import java.util.Collection;
  */
 public interface MatriculaRepository extends CrudRepository<Matricula, Long>{
 
-    @Query("select a from Alumno a join Matricula m where a.id = m.alumno.id and a.curso = ?1 and a.semestre = ?2")
+    @Query("select a, m.nota from Alumno a join Matricula m where a.id = m.alumno.id and a.curso = ?1 and a.semestre = ?2")
     Collection<Alumno> findAlumnosByCursoAndSemestre(Curso curso, String semestre);
 
     @Query("select a from Alumno a where a.id = ?1")
