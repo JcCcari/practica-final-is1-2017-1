@@ -20,4 +20,8 @@ public class AlumnoService {
     public Collection<Alumno> findByApellidoPaterno(String apellidoPaterno){
         return alumnoRepository.findByApellidoPaterno(apellidoPaterno);
     }
+
+    public Alumno findByDni(String dni){
+        return alumnoRepository.findByDni(dni);
+    }
 }

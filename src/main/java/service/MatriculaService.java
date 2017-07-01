@@ -22,7 +22,7 @@ public class MatriculaService {
     @Autowired
     AlumnoRepository alumnoRepository;
 
-    Boolean matricular(Alumno alumno, Curso curso, String semestre){
+    public Boolean matricular(Alumno alumno, Curso curso, String semestre){
         if (matriculaRepository.findCreditosByAlumno(alumno.getId() + curso.getCreditos()) > 20)
             return false; // no se puede matricular, exedió el numero de creditos
         Matricula matricula = new Matricula(alumno, curso, semestre);
