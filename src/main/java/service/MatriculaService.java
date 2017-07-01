@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
+import repository.AlumnoRepository;
 import repository.MatriculaRepository;
 
 /**
@@ -18,9 +19,19 @@ public class MatriculaService {
     @Autowired
     MatriculaRepository matriculaRepository;
 
-    Boolean matricular(Alumno alumno, Curso curso, String semestre){
+    @Autowired
+    AlumnoRepository alumnoRepository;
 
+    Boolean matricular(Alumno alumno, Curso curso, String semestre){
+        if (matriculaRepository.findCreditosByAlumno(alumno.getId() + curso.getCreditos()) > 20)
+            return false; // no se puede matricular
         Matricula matricula = new Matricula(alumno, curso, semestre);
+        return true;
+    }
+
+    Boolean subirNotaCurso(Curso curso, Alumno alumno ,Integer nota){
+
+
         return true;
     }
 

@@ -14,7 +14,7 @@ public interface AlumnoRepository extends CrudRepository<Alumno, Long> {
     Collection<Alumno> findAll();
 
     @Query("select a from Alumno a where a.dni = ?1")
-    Alumno findByDni();
+    Alumno findByDni(String dni);
 
     @Query("select a from Alumno a where a.apellidoPaterno = ?1")
     Collection<Alumno> findByApellidoPaterno(String apellido);
